@@ -1,0 +1,43 @@
+[2023-01-27T13:53:45.554+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: crawl_tienphong.crawler manual__2023-01-27T13:28:29.178817+00:00 [queued]>
+[2023-01-27T13:53:45.586+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: crawl_tienphong.crawler manual__2023-01-27T13:28:29.178817+00:00 [queued]>
+[2023-01-27T13:53:45.587+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-27T13:53:45.587+0000] {taskinstance.py:1280} INFO - Starting attempt 3 of 4
+[2023-01-27T13:53:45.587+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-27T13:53:45.625+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): crawler> on 2023-01-27 13:28:29.178817+00:00
+[2023-01-27T13:53:45.632+0000] {standard_task_runner.py:55} INFO - Started process 82 to run task
+[2023-01-27T13:53:45.636+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'crawl_tienphong', 'crawler', 'manual__2023-01-27T13:28:29.178817+00:00', '--job-id', '362', '--raw', '--subdir', 'DAGS_FOLDER/crawl_tienphong.py', '--cfg-path', '/tmp/tmpynrg48c2']
+[2023-01-27T13:53:45.637+0000] {standard_task_runner.py:83} INFO - Job 362: Subtask crawler
+[2023-01-27T13:53:45.756+0000] {task_command.py:388} INFO - Running <TaskInstance: crawl_tienphong.crawler manual__2023-01-27T13:28:29.178817+00:00 [running]> on host 9be4ecca8506
+[2023-01-27T13:53:45.886+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=phukaioh
+AIRFLOW_CTX_DAG_ID=crawl_tienphong
+AIRFLOW_CTX_TASK_ID=crawler
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-27T13:28:29.178817+00:00
+AIRFLOW_CTX_TRY_NUMBER=3
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-27T13:28:29.178817+00:00
+[2023-01-27T13:53:45.888+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-27T13:53:45.889+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/project/ && ls -la && scrapy runspider crawler/spiders/tienphong.py -o data/tienphong.json ']
+[2023-01-27T13:53:45.904+0000] {subprocess.py:86} INFO - Output:
+[2023-01-27T13:53:45.908+0000] {subprocess.py:93} INFO - total 36
+[2023-01-27T13:53:45.909+0000] {subprocess.py:93} INFO - drwxrwxr-x 5 default 1001 4096 Jan 27 13:16 .
+[2023-01-27T13:53:45.909+0000] {subprocess.py:93} INFO - drwxr-xr-x 1 root    root 4096 Jan 27 13:53 ..
+[2023-01-27T13:53:45.909+0000] {subprocess.py:93} INFO - drwxrwxr-x 4 default 1001 4096 Jan 26 03:12 crawler
+[2023-01-27T13:53:45.910+0000] {subprocess.py:93} INFO - drwxrwxr-x 2 default 1001 4096 Jan 27 13:29 data
+[2023-01-27T13:53:45.910+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001   69 Jan 27 13:13 run_crawl_tienphong.sh
+[2023-01-27T13:53:45.910+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001  257 Jan 26 03:08 scrapy.cfg
+[2023-01-27T13:53:45.910+0000] {subprocess.py:93} INFO - drwxrwxr-x 2 default 1001 4096 Jan 27 13:29 source
+[2023-01-27T13:53:45.910+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001    6 Jan 27 13:16 test.sh
+[2023-01-27T13:53:45.910+0000] {subprocess.py:93} INFO - /bin/bash: line 1: scrapy: command not found
+[2023-01-27T13:53:45.911+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2023-01-27T13:53:45.926+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2023-01-27T13:53:45.931+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=crawl_tienphong, task_id=crawler, execution_date=20230127T132829, start_date=20230127T135345, end_date=20230127T135345
+[2023-01-27T13:53:45.951+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 362 for task crawler (Bash command failed. The command returned a non-zero exit code 127.; 82)
+[2023-01-27T13:53:45.975+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-27T13:53:45.999+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

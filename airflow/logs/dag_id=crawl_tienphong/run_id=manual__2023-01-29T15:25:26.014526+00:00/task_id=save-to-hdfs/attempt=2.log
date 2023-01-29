@@ -1,0 +1,106 @@
+[2023-01-29T15:30:48.528+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: crawl_tienphong.save-to-hdfs manual__2023-01-29T15:25:26.014526+00:00 [queued]>
+[2023-01-29T15:30:48.538+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: crawl_tienphong.save-to-hdfs manual__2023-01-29T15:25:26.014526+00:00 [queued]>
+[2023-01-29T15:30:48.538+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T15:30:48.538+0000] {taskinstance.py:1280} INFO - Starting attempt 2 of 4
+[2023-01-29T15:30:48.538+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-29T15:30:48.558+0000] {taskinstance.py:1300} INFO - Executing <Task(SSHOperator): save-to-hdfs> on 2023-01-29 15:25:26.014526+00:00
+[2023-01-29T15:30:48.563+0000] {standard_task_runner.py:55} INFO - Started process 11349 to run task
+[2023-01-29T15:30:48.565+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'crawl_tienphong', 'save-to-hdfs', 'manual__2023-01-29T15:25:26.014526+00:00', '--job-id', '1413', '--raw', '--subdir', 'DAGS_FOLDER/crawl_tienphong.py', '--cfg-path', '/tmp/tmpjr2qeel4']
+[2023-01-29T15:30:48.565+0000] {standard_task_runner.py:83} INFO - Job 1413: Subtask save-to-hdfs
+[2023-01-29T15:30:48.624+0000] {task_command.py:388} INFO - Running <TaskInstance: crawl_tienphong.save-to-hdfs manual__2023-01-29T15:25:26.014526+00:00 [running]> on host 9be4ecca8506
+[2023-01-29T15:30:48.703+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=phukaioh
+AIRFLOW_CTX_DAG_ID=crawl_tienphong
+AIRFLOW_CTX_TASK_ID=save-to-hdfs
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-29T15:25:26.014526+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-29T15:25:26.014526+00:00
+[2023-01-29T15:30:48.704+0000] {ssh.py:133} INFO - Creating ssh_client
+[2023-01-29T15:30:48.704+0000] {ssh.py:283} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2023-01-29T15:30:48.711+0000] {transport.py:1874} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2023-01-29T15:30:48.777+0000] {transport.py:1874} INFO - Authentication (password) successful!
+[2023-01-29T15:30:48.778+0000] {ssh.py:460} INFO - Running command: ls -la && pwd && dfs dfs -copyFromLocal -f /home/phukaioh/Documents/intro-data-science/crawler/data/tienphong.json /data/tienphong-29-01-2023.json 
+[2023-01-29T15:30:49.084+0000] {ssh.py:496} INFO - total 476
+[2023-01-29T15:30:49.086+0000] {ssh.py:496} INFO - drwxr-xr-x 50 phukaioh phukaioh   4096 Thg 1  29 21:30 .
+[2023-01-29T15:30:49.086+0000] {ssh.py:496} INFO - drwxr-xr-x  4 root     root       4096 Thg 11  7 23:00 ..
+[2023-01-29T15:30:49.087+0000] {ssh.py:496} INFO - drwxrwxr-x  6 phukaioh phukaioh   4096 Thg 11 23 14:49 20221
+[2023-01-29T15:30:49.087+0000] {ssh.py:496} INFO - drwxrwxr-x 28 phukaioh phukaioh   4096 Thg 11 13 21:28 anaconda3
+[2023-01-29T15:30:49.087+0000] {ssh.py:496} INFO - drwxrwxr-x  6 phukaioh phukaioh   4096 Thg 1  17 22:58 .android
+[2023-01-29T15:30:49.088+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 11 22 23:14 Android
+[2023-01-29T15:30:49.088+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh    128 Thg 12 14 21:57 .apport-ignore.xml
+[2023-01-29T15:30:49.088+0000] {ssh.py:496} INFO - -rw-------  1 phukaioh phukaioh  30990 Thg 1  29 20:30 .bash_history
+[2023-01-29T15:30:49.089+0000] {ssh.py:496} INFO - -rw-r--r--  1 phukaioh phukaioh    220 Thg 11  7 23:00 .bash_logout
+[2023-01-29T15:30:49.089+0000] {ssh.py:496} INFO - -rw-r--r--  1 phukaioh phukaioh   4574 Thg 1  29 21:09 .bashrc
+[2023-01-29T15:30:49.089+0000] {ssh.py:496} INFO - drwxr-xr-x 40 phukaioh phukaioh   4096 Thg 1  29 20:30 .cache
+[2023-01-29T15:30:49.090+0000] {ssh.py:496} INFO - drwxrwxr-x  2 phukaioh phukaioh   4096 Thg 11 13 20:56 .conda
+[2023-01-29T15:30:49.090+0000] {ssh.py:496} INFO - drwx------ 39 phukaioh phukaioh   4096 Thg 1  27 21:55 .config
+[2023-01-29T15:30:49.090+0000] {ssh.py:496} INFO - drwxrwxr-x  2 phukaioh phukaioh   4096 Thg 12 18 21:07 .crashlytics
+[2023-01-29T15:30:49.091+0000] {ssh.py:496} INFO - drwxrwxr-x 11 phukaioh phukaioh   4096 Thg 1   6 23:05 cross-platform-app
+[2023-01-29T15:30:49.091+0000] {ssh.py:496} INFO - drwxr-xr-x  3 phukaioh phukaioh   4096 Thg 1  17 23:06 Desktop
+[2023-01-29T15:30:49.092+0000] {ssh.py:496} INFO - drwxr-xr-x 21 phukaioh phukaioh   4096 Thg 1  28 15:22 Documents
+[2023-01-29T15:30:49.092+0000] {ssh.py:496} INFO - drwxr-xr-x 11 phukaioh phukaioh   4096 Thg 1  29 21:01 Downloads
+[2023-01-29T15:30:49.092+0000] {ssh.py:496} INFO - drwxrwxr-x  5 phukaioh phukaioh   4096 Thg 12 11 12:29 .eclipse
+[2023-01-29T15:30:49.093+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 12 11 12:29 eclipse-workspace
+[2023-01-29T15:30:49.093+0000] {ssh.py:496} INFO - -rw-------  1 phukaioh phukaioh     16 Thg 11 22 23:13 .emulator_console_auth_token
+[2023-01-29T15:30:49.093+0000] {ssh.py:496} INFO - drwxrwxr-x  8 phukaioh phukaioh   4096 Thg 12 20 09:53 .expo
+[2023-01-29T15:30:49.093+0000] {ssh.py:496} INFO - drwxrwxr-x  5 phukaioh phukaioh   4096 Thg 1  13 15:44 Genetic-Algorithm-With-CPP-Problem
+[2023-01-29T15:30:49.094+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh    244 Thg 11 13 09:58 .gitconfig
+[2023-01-29T15:30:49.094+0000] {ssh.py:496} INFO - drwx------  3 phukaioh phukaioh   4096 Thg 1  27 21:55 .gnupg
+[2023-01-29T15:30:49.095+0000] {ssh.py:496} INFO - drwxrwxr-x 10 phukaioh phukaioh   4096 Thg 11 22 23:54 .gradle
+[2023-01-29T15:30:49.095+0000] {ssh.py:496} INFO - drwxrwxr-x  5 phukaioh phukaioh   4096 Thg 11 13 21:04 .ipython
+[2023-01-29T15:30:49.095+0000] {ssh.py:496} INFO - drwxrwxr-x  4 phukaioh phukaioh   4096 Thg 11  7 23:05 .java
+[2023-01-29T15:30:49.096+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 12 11 12:35 .jdks
+[2023-01-29T15:30:49.096+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 11 12 22:49 .lemminx
+[2023-01-29T15:30:49.096+0000] {ssh.py:496} INFO - drwxr-xr-x  4 phukaioh phukaioh   4096 Thg 11 13 08:09 .local
+[2023-01-29T15:30:49.097+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 11 12 21:54 .m2
+[2023-01-29T15:30:49.097+0000] {ssh.py:496} INFO - drwx------  3 phukaioh phukaioh   4096 Thg 1  16 23:27 .mongodb
+[2023-01-29T15:30:49.097+0000] {ssh.py:496} INFO - drwx------  4 phukaioh phukaioh   4096 Thg 12 13 11:31 .mozilla
+[2023-01-29T15:30:49.098+0000] {ssh.py:496} INFO - drwxr-xr-x  2 phukaioh phukaioh   4096 Thg 11  7 23:01 Music
+[2023-01-29T15:30:49.098+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh    128 Thg 1  13 17:10 note
+[2023-01-29T15:30:49.098+0000] {ssh.py:496} INFO - drwxrwxr-x  6 phukaioh phukaioh   4096 Thg 12 18 14:41 .npm
+[2023-01-29T15:30:49.098+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 12 12 21:22 .p2
+[2023-01-29T15:30:49.099+0000] {ssh.py:496} INFO - drwxr-xr-x  2 phukaioh phukaioh   4096 Thg 1  13 20:56 Pictures
+[2023-01-29T15:30:49.099+0000] {ssh.py:496} INFO - -rw-r-----  1 phukaioh root       4351 Thg 12 15 00:38 pii-evaluate-result.xlsx
+[2023-01-29T15:30:49.099+0000] {ssh.py:496} INFO - drwx------  3 phukaioh phukaioh   4096 Thg 11  7 23:01 .pki
+[2023-01-29T15:30:49.100+0000] {ssh.py:496} INFO - -rw-r--r--  1 phukaioh phukaioh    807 Thg 11  7 23:00 .profile
+[2023-01-29T15:30:49.100+0000] {ssh.py:496} INFO - drwxr-xr-x  2 phukaioh phukaioh   4096 Thg 11  7 23:01 Public
+[2023-01-29T15:30:49.100+0000] {ssh.py:496} INFO - -rw-------  1 phukaioh phukaioh     25 Thg 1  27 20:55 .python_history
+[2023-01-29T15:30:49.101+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 12 18 21:12 .react-native-cli
+[2023-01-29T15:30:49.101+0000] {ssh.py:496} INFO - drwxrwxr-x  2 phukaioh phukaioh   4096 Thg 11 12 21:54 .redhat
+[2023-01-29T15:30:49.101+0000] {ssh.py:496} INFO - drwx------ 10 phukaioh phukaioh   4096 Thg 1  23 20:01 snap
+[2023-01-29T15:30:49.101+0000] {ssh.py:496} INFO - drwxrwxr-x  2 phukaioh phukaioh   4096 Thg 11 17 16:48 .sqlline
+[2023-01-29T15:30:49.102+0000] {ssh.py:496} INFO - drwx------  2 phukaioh phukaioh   4096 Thg 1  29 20:30 .ssh
+[2023-01-29T15:30:49.102+0000] {ssh.py:496} INFO - -rw-r--r--  1 phukaioh phukaioh      0 Thg 11 11 08:12 .sudo_as_admin_successful
+[2023-01-29T15:30:49.102+0000] {ssh.py:496} INFO - drwxrwxr-x  2 phukaioh phukaioh   4096 Thg 12 11 12:43 .swt
+[2023-01-29T15:30:49.103+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh    126 Thg 1  13 16:40 task.txt
+[2023-01-29T15:30:49.103+0000] {ssh.py:496} INFO - drwxr-xr-x  2 phukaioh phukaioh   4096 Thg 11 14 20:22 Templates
+[2023-01-29T15:30:49.103+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh      0 Thg 11 21 13:22 test.txt
+[2023-01-29T15:30:49.104+0000] {ssh.py:496} INFO - drwx------  6 phukaioh phukaioh   4096 Thg 12 21 23:37 .thunderbird
+[2023-01-29T15:30:49.104+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh 186773 Thg 11 20 21:25 t.txt
+[2023-01-29T15:30:49.104+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 1  27 09:58 Ubuntu22
+[2023-01-29T15:30:49.105+0000] {ssh.py:496} INFO - drwxr-xr-x  2 phukaioh phukaioh   4096 Thg 1   6 00:14 Videos
+[2023-01-29T15:30:49.105+0000] {ssh.py:496} INFO - drwxr-xr-x  2 phukaioh phukaioh   4096 Thg 1  27 09:58 .vmware
+[2023-01-29T15:30:49.105+0000] {ssh.py:496} INFO - drwxrwxrwx  4 phukaioh phukaioh   4096 Thg 11 12 23:27 vmware
+[2023-01-29T15:30:49.106+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh    322 Thg 12  9 21:31 vpn.sh
+[2023-01-29T15:30:49.106+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 11  7 23:06 .vscode
+[2023-01-29T15:30:49.106+0000] {ssh.py:496} INFO - drwxrwxr-x  2 phukaioh phukaioh   4096 Thg 11 22 08:40 .vscode-react-native
+[2023-01-29T15:30:49.107+0000] {ssh.py:496} INFO - drwxrwxr-x  3 phukaioh phukaioh   4096 Thg 11 21 20:58 .yarn
+[2023-01-29T15:30:49.107+0000] {ssh.py:496} INFO - -rw-rw-r--  1 phukaioh phukaioh    116 Thg 1  15 19:46 .yarnrc
+[2023-01-29T15:30:49.107+0000] {ssh.py:496} INFO - drwx------  7 phukaioh phukaioh   4096 Thg 1  10 18:18 .zoom
+[2023-01-29T15:30:49.108+0000] {ssh.py:496} INFO - /home/phukaioh
+[2023-01-29T15:30:49.108+0000] {ssh.py:501} WARNING - bash: dfs: command not found
+[2023-01-29T15:30:49.199+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/ssh/operators/ssh.py", line 171, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/ssh/operators/ssh.py", line 159, in run_ssh_client_command
+    self.raise_for_status(exit_status, agg_stderr, context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/ssh/operators/ssh.py", line 152, in raise_for_status
+    raise AirflowException(f"SSH operator error: exit status = {exit_status}")
+airflow.exceptions.AirflowException: SSH operator error: exit status = 127
+[2023-01-29T15:30:49.214+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=crawl_tienphong, task_id=save-to-hdfs, execution_date=20230129T152526, start_date=20230129T153048, end_date=20230129T153049
+[2023-01-29T15:30:49.237+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1413 for task save-to-hdfs (SSH operator error: exit status = 127; 11349)
+[2023-01-29T15:30:49.259+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-01-29T15:30:49.278+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
