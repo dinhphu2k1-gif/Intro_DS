@@ -1,6 +1,7 @@
 import os
 import scrapy
 from scrapy.linkextractors import LinkExtractor
+from datetime import datetime
 
 
 class TienphongSpider(scrapy.Spider):
@@ -8,7 +9,7 @@ class TienphongSpider(scrapy.Spider):
     allowed_domains = ['vietnamnet.vn']
     # start_urls = [
     #     'http://tienphong.vn/mien-bac-don-khong-khi-lanh-mua-keo-dai-tu-dem-nay-post1485966.tpo']
-    
+
     start_urls = [
         'https://vietnamnet.vn/benh-nhan-duoc-chua-khoi-ung-thu-ngay-trong-ngay-phat-hien-benh-2084638.html']
     file = "/source/vietnamnet.txt"
@@ -17,7 +18,7 @@ class TienphongSpider(scrapy.Spider):
         for line in f.readlines():
             link = line.strip()
             start_urls.append(link)
-            for i in range(1, 20):
+            for i in range(1, 10):
                 start_urls.append(link + "-page" + str(i))
     f.close()
 
@@ -29,8 +30,7 @@ class TienphongSpider(scrapy.Spider):
         for link in le.extract_links(response):
             print(link.url)
             yield scrapy.Request(url=link.url, callback=self.parse_item)
-    
-        
+
     def parse_item(self, response):
         title = ' '.join(self.parse_title(response).split())
         summary = ' '.join(self.parse_summary(response).split())
@@ -40,13 +40,17 @@ class TienphongSpider(scrapy.Spider):
         # print(title)
         # print(summary)
         # print(content)
-        
+
+        time_now = datetime.now().strftime("%d/%m/%Y")
+        if time_now not in time:
+            return
+
         if title == None or summary == None or content == "":
             return
         scraped_info = {
-            'title' : title,
-            'summary' : summary,
-            'content' : content,
+            'title': title,
+            'summary': summary,
+            'content': content,
             'time': time,
             'topic': topic
         }
@@ -55,19 +59,24 @@ class TienphongSpider(scrapy.Spider):
         yield scraped_info
 
     def parse_time(self, response):
-        time = response.xpath('//*[contains(@class,"breadcrumb-box__time")]/p/span/text()')
+        time = response.xpath(
+            '//*[contains(@class,"breadcrumb-box__time")]/p/span/text()')
         return time.get()
 
     def parse_title(self, response):
-        title = response.xpath('//*[contains(@class,"newsFeature__header-title")]/text()')
+        title = response.xpath(
+            '//*[contains(@class,"newsFeature__header-title")]/text()')
         return title.get()
 
     def parse_summary(self, response):
         # summary = response.xpath('//article/div[1]/div[1]/div[1]/text()')
-        summary = response.xpath('//*[contains(@class,"newFeature__main-textBold")]/text()')
+        summary = response.xpath(
+            '//*[contains(@class,"newFeature__main-textBold")]/text()')
         return summary.get()
+
     def parse_topic(self, response):
-        topic = response.xpath('//*[contains(@class,"breadcrumb-box__link ")]/p/a/text()')
+        topic = response.xpath(
+            '//*[contains(@class,"breadcrumb-box__link ")]/p/a/text()')
         return topic.get()
 
     def parse_content(self, response):

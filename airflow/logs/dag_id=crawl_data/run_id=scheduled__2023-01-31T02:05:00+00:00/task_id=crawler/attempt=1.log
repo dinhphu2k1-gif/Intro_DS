@@ -1,0 +1,313 @@
+[2023-01-31T09:46:41.913+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: crawl_data.crawler scheduled__2023-01-31T02:05:00+00:00 [queued]>
+[2023-01-31T09:46:41.930+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: crawl_data.crawler scheduled__2023-01-31T02:05:00+00:00 [queued]>
+[2023-01-31T09:46:41.930+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-31T09:46:41.931+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 4
+[2023-01-31T09:46:41.931+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-31T09:46:41.961+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): crawler> on 2023-01-31 02:05:00+00:00
+[2023-01-31T09:46:41.966+0000] {standard_task_runner.py:55} INFO - Started process 5732 to run task
+[2023-01-31T09:46:41.970+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'crawl_data', 'crawler', 'scheduled__2023-01-31T02:05:00+00:00', '--job-id', '2046', '--raw', '--subdir', 'DAGS_FOLDER/crawl_data.py', '--cfg-path', '/tmp/tmpcix96_hl']
+[2023-01-31T09:46:41.970+0000] {standard_task_runner.py:83} INFO - Job 2046: Subtask crawler
+[2023-01-31T09:46:42.070+0000] {task_command.py:388} INFO - Running <TaskInstance: crawl_data.crawler scheduled__2023-01-31T02:05:00+00:00 [running]> on host 9be4ecca8506
+[2023-01-31T09:46:42.194+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=phukaioh
+AIRFLOW_CTX_DAG_ID=crawl_data
+AIRFLOW_CTX_TASK_ID=crawler
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-31T02:05:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-01-31T02:05:00+00:00
+[2023-01-31T09:46:42.195+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-31T09:46:42.196+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/project/ && ls -la && pip install scrapy && bash run_crawl_vietnamnet.sh ']
+[2023-01-31T09:46:42.209+0000] {subprocess.py:86} INFO - Output:
+[2023-01-31T09:46:42.214+0000] {subprocess.py:93} INFO - total 36
+[2023-01-31T09:46:42.214+0000] {subprocess.py:93} INFO - drwxrwxr-x 5 default 1001 4096 Jan 29 17:21 .
+[2023-01-31T09:46:42.215+0000] {subprocess.py:93} INFO - drwxr-xr-x 1 root    root 4096 Jan 27 13:53 ..
+[2023-01-31T09:46:42.215+0000] {subprocess.py:93} INFO - drwxrwxr-x 4 default 1001 4096 Jan 26 03:12 crawler
+[2023-01-31T09:46:42.215+0000] {subprocess.py:93} INFO - drwxrwxr-x 2 default 1001 4096 Jan 30 08:13 data
+[2023-01-31T09:46:42.215+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001   99 Jan 30 08:54 run_crawl_tienphong.sh
+[2023-01-31T09:46:42.215+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001  101 Jan 30 08:54 run_crawl_vietnamnet.sh
+[2023-01-31T09:46:42.216+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 default 1001  257 Jan 26 03:08 scrapy.cfg
+[2023-01-31T09:46:42.216+0000] {subprocess.py:93} INFO - drwxrwxr-x 2 default 1001 4096 Jan 29 15:54 source
+[2023-01-31T09:46:43.739+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-01-31T09:46:44.104+0000] {subprocess.py:93} INFO - Requirement already satisfied: scrapy in /home/***/.local/lib/python3.7/site-packages (2.7.1)
+[2023-01-31T09:46:44.140+0000] {subprocess.py:93} INFO - Requirement already satisfied: packaging in /home/***/.local/lib/python3.7/site-packages (from scrapy) (21.3)
+[2023-01-31T09:46:44.142+0000] {subprocess.py:93} INFO - Requirement already satisfied: lxml>=4.3.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (4.9.2)
+[2023-01-31T09:46:44.143+0000] {subprocess.py:93} INFO - Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from scrapy) (57.5.0)
+[2023-01-31T09:46:44.144+0000] {subprocess.py:93} INFO - Requirement already satisfied: queuelib>=1.4.2 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (1.6.2)
+[2023-01-31T09:46:44.146+0000] {subprocess.py:93} INFO - Requirement already satisfied: zope.interface>=5.1.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (5.5.2)
+[2023-01-31T09:46:44.148+0000] {subprocess.py:93} INFO - Requirement already satisfied: w3lib>=1.17.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (2.1.1)
+[2023-01-31T09:46:44.149+0000] {subprocess.py:93} INFO - Requirement already satisfied: cryptography>=3.3 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (38.0.4)
+[2023-01-31T09:46:44.151+0000] {subprocess.py:93} INFO - Requirement already satisfied: itemloaders>=1.0.1 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (1.0.6)
+[2023-01-31T09:46:44.153+0000] {subprocess.py:93} INFO - Requirement already satisfied: service-identity>=18.1.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (21.1.0)
+[2023-01-31T09:46:44.155+0000] {subprocess.py:93} INFO - Requirement already satisfied: pyOpenSSL>=21.0.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (22.1.0)
+[2023-01-31T09:46:44.157+0000] {subprocess.py:93} INFO - Requirement already satisfied: protego>=0.1.15 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (0.2.1)
+[2023-01-31T09:46:44.158+0000] {subprocess.py:93} INFO - Requirement already satisfied: cssselect>=0.9.1 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (1.2.0)
+[2023-01-31T09:46:44.161+0000] {subprocess.py:93} INFO - Requirement already satisfied: PyDispatcher>=2.0.5 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (2.0.6)
+[2023-01-31T09:46:44.162+0000] {subprocess.py:93} INFO - Requirement already satisfied: tldextract in /home/***/.local/lib/python3.7/site-packages (from scrapy) (3.4.0)
+[2023-01-31T09:46:44.164+0000] {subprocess.py:93} INFO - Requirement already satisfied: itemadapter>=0.1.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (0.7.0)
+[2023-01-31T09:46:44.166+0000] {subprocess.py:93} INFO - Requirement already satisfied: Twisted>=18.9.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (22.10.0)
+[2023-01-31T09:46:44.167+0000] {subprocess.py:93} INFO - Requirement already satisfied: parsel>=1.5.0 in /home/***/.local/lib/python3.7/site-packages (from scrapy) (1.7.0)
+[2023-01-31T09:46:44.205+0000] {subprocess.py:93} INFO - Requirement already satisfied: cffi>=1.12 in /home/***/.local/lib/python3.7/site-packages (from cryptography>=3.3->scrapy) (1.15.1)
+[2023-01-31T09:46:44.214+0000] {subprocess.py:93} INFO - Requirement already satisfied: jmespath>=0.9.5 in /home/***/.local/lib/python3.7/site-packages (from itemloaders>=1.0.1->scrapy) (0.10.0)
+[2023-01-31T09:46:44.233+0000] {subprocess.py:93} INFO - Requirement already satisfied: six in /home/***/.local/lib/python3.7/site-packages (from protego>=0.1.15->scrapy) (1.16.0)
+[2023-01-31T09:46:44.276+0000] {subprocess.py:93} INFO - Requirement already satisfied: attrs>=19.1.0 in /home/***/.local/lib/python3.7/site-packages (from service-identity>=18.1.0->scrapy) (22.2.0)
+[2023-01-31T09:46:44.277+0000] {subprocess.py:93} INFO - Requirement already satisfied: pyasn1-modules in /home/***/.local/lib/python3.7/site-packages (from service-identity>=18.1.0->scrapy) (0.2.8)
+[2023-01-31T09:46:44.278+0000] {subprocess.py:93} INFO - Requirement already satisfied: pyasn1 in /home/***/.local/lib/python3.7/site-packages (from service-identity>=18.1.0->scrapy) (0.4.8)
+[2023-01-31T09:46:44.630+0000] {subprocess.py:93} INFO - Requirement already satisfied: constantly>=15.1 in /home/***/.local/lib/python3.7/site-packages (from Twisted>=18.9.0->scrapy) (15.1.0)
+[2023-01-31T09:46:44.631+0000] {subprocess.py:93} INFO - Requirement already satisfied: hyperlink>=17.1.1 in /home/***/.local/lib/python3.7/site-packages (from Twisted>=18.9.0->scrapy) (21.0.0)
+[2023-01-31T09:46:44.632+0000] {subprocess.py:93} INFO - Requirement already satisfied: typing-extensions>=3.6.5 in /home/***/.local/lib/python3.7/site-packages (from Twisted>=18.9.0->scrapy) (4.4.0)
+[2023-01-31T09:46:44.633+0000] {subprocess.py:93} INFO - Requirement already satisfied: Automat>=0.8.0 in /home/***/.local/lib/python3.7/site-packages (from Twisted>=18.9.0->scrapy) (22.10.0)
+[2023-01-31T09:46:44.634+0000] {subprocess.py:93} INFO - Requirement already satisfied: incremental>=21.3.0 in /home/***/.local/lib/python3.7/site-packages (from Twisted>=18.9.0->scrapy) (22.10.0)
+[2023-01-31T09:46:44.659+0000] {subprocess.py:93} INFO - Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /home/***/.local/lib/python3.7/site-packages (from packaging->scrapy) (3.0.9)
+[2023-01-31T09:46:44.683+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.1.0 in /home/***/.local/lib/python3.7/site-packages (from tldextract->scrapy) (2.28.2)
+[2023-01-31T09:46:44.684+0000] {subprocess.py:93} INFO - Requirement already satisfied: filelock>=3.0.8 in /home/***/.local/lib/python3.7/site-packages (from tldextract->scrapy) (3.9.0)
+[2023-01-31T09:46:44.685+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests-file>=1.4 in /home/***/.local/lib/python3.7/site-packages (from tldextract->scrapy) (1.5.1)
+[2023-01-31T09:46:44.685+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna in /home/***/.local/lib/python3.7/site-packages (from tldextract->scrapy) (3.4)
+[2023-01-31T09:46:44.743+0000] {subprocess.py:93} INFO - Requirement already satisfied: pycparser in /home/***/.local/lib/python3.7/site-packages (from cffi>=1.12->cryptography>=3.3->scrapy) (2.21)
+[2023-01-31T09:46:44.799+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.7/site-packages (from requests>=2.1.0->tldextract->scrapy) (2022.12.7)
+[2023-01-31T09:46:44.800+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/***/.local/lib/python3.7/site-packages (from requests>=2.1.0->tldextract->scrapy) (1.26.14)
+[2023-01-31T09:46:44.801+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.7/site-packages (from requests>=2.1.0->tldextract->scrapy) (2.1.1)
+[2023-01-31T09:46:52.065+0000] {base_job.py:243} ERROR - LocalTaskJob heartbeat got an exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3361, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/base_job.py", line 215, in heartbeat
+    session.merge(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3057, in merge
+    _resolve_conflict_map=_resolve_conflict_map,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3135, in _merge
+    options=options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2856, in get
+    execution_options=execution_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2974, in _get_impl
+    load_options=load_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/loading.py", line 534, in load_on_pk_identity
+    bind_arguments=bind_arguments,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1713, in execute
+    conn = self._connection_for_bind(bind)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1553, in _connection_for_bind
+    engine, execution_options
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 747, in _connection_for_bind
+    conn = bind.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3315, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3394, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3365, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2199, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3361, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2023-01-31T09:46:54.603+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.utils.log] INFO: Scrapy 2.7.1 started (bot: crawler)
+[2023-01-31T09:46:54.608+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.7.16 (default, Jan 18 2023, 03:29:28) - [GCC 10.2.1 20210110], pyOpenSSL 22.1.0 (OpenSSL 3.0.7 1 Nov 2022), cryptography 38.0.4, Platform Linux-5.15.0-58-generic-x86_64-with-debian-11.6
+[2023-01-31T09:46:54.612+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.crawler] INFO: Overridden settings:
+[2023-01-31T09:46:54.612+0000] {subprocess.py:93} INFO - {'BOT_NAME': 'crawler',
+[2023-01-31T09:46:54.612+0000] {subprocess.py:93} INFO -  'FEED_EXPORT_ENCODING': 'utf-8',
+[2023-01-31T09:46:54.612+0000] {subprocess.py:93} INFO -  'NEWSPIDER_MODULE': 'crawler.spiders',
+[2023-01-31T09:46:54.612+0000] {subprocess.py:93} INFO -  'ROBOTSTXT_OBEY': True,
+[2023-01-31T09:46:54.612+0000] {subprocess.py:93} INFO -  'SPIDER_LOADER_WARN_ONLY': True,
+[2023-01-31T09:46:54.612+0000] {subprocess.py:93} INFO -  'SPIDER_MODULES': ['crawler.spiders']}
+[2023-01-31T09:46:54.613+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [py.warnings] WARNING: /home/***/.local/lib/python3.7/site-packages/scrapy/utils/request.py:231: ScrapyDeprecationWarning: '2.6' is a deprecated value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting.
+[2023-01-31T09:46:54.613+0000] {subprocess.py:93} INFO - 
+[2023-01-31T09:46:54.613+0000] {subprocess.py:93} INFO - It is also the default value. In other words, it is normal to get this warning if you have not defined a value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting. This is so for backward compatibility reasons, but it will change in a future version of Scrapy.
+[2023-01-31T09:46:54.614+0000] {subprocess.py:93} INFO - 
+[2023-01-31T09:46:54.614+0000] {subprocess.py:93} INFO - See the documentation of the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting for information on how to handle this deprecation.
+[2023-01-31T09:46:54.614+0000] {subprocess.py:93} INFO -   return cls(crawler)
+[2023-01-31T09:46:54.614+0000] {subprocess.py:93} INFO - 
+[2023-01-31T09:46:54.614+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+[2023-01-31T09:46:54.624+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.extensions.telnet] INFO: Telnet Password: f2784522ca58fed4
+[2023-01-31T09:46:54.662+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.middleware] INFO: Enabled extensions:
+[2023-01-31T09:46:54.662+0000] {subprocess.py:93} INFO - ['scrapy.extensions.corestats.CoreStats',
+[2023-01-31T09:46:54.662+0000] {subprocess.py:93} INFO -  'scrapy.extensions.telnet.TelnetConsole',
+[2023-01-31T09:46:54.662+0000] {subprocess.py:93} INFO -  'scrapy.extensions.memusage.MemoryUsage',
+[2023-01-31T09:46:54.662+0000] {subprocess.py:93} INFO -  'scrapy.extensions.feedexport.FeedExporter',
+[2023-01-31T09:46:54.662+0000] {subprocess.py:93} INFO -  'scrapy.extensions.logstats.LogStats']
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.middleware] INFO: Enabled downloader middlewares:
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO - ['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+[2023-01-31T09:46:54.755+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+[2023-01-31T09:46:54.756+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+[2023-01-31T09:46:54.756+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+[2023-01-31T09:46:54.756+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+[2023-01-31T09:46:54.756+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+[2023-01-31T09:46:54.756+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.stats.DownloaderStats']
+[2023-01-31T09:46:54.756+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.middleware] INFO: Enabled spider middlewares:
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO - ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.referer.RefererMiddleware',
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.depth.DepthMiddleware']
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.middleware] INFO: Enabled item pipelines:
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO - []
+[2023-01-31T09:46:54.757+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.core.engine] INFO: Spider opened
+[2023-01-31T09:46:54.826+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+[2023-01-31T09:46:54.827+0000] {subprocess.py:93} INFO - 2023-01-31 09:46:54 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+[2023-01-31T09:46:57.077+0000] {base_job.py:243} ERROR - LocalTaskJob heartbeat got an exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3361, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/base_job.py", line 215, in heartbeat
+    session.merge(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3057, in merge
+    _resolve_conflict_map=_resolve_conflict_map,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 3135, in _merge
+    options=options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2856, in get
+    execution_options=execution_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2974, in _get_impl
+    load_options=load_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/loading.py", line 534, in load_on_pk_identity
+    bind_arguments=bind_arguments,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1713, in execute
+    conn = self._connection_for_bind(bind)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1553, in _connection_for_bind
+    engine, execution_options
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 747, in _connection_for_bind
+    conn = bind.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3315, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3394, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3365, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2199, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 3361, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/create.py", line 578, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
